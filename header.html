@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #282c34;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+            cursor: pointer;
+        }
+        .header .logo {
+            flex: 0 1 auto;
+        }
+        .header .categories {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #282c34;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header .categories a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 30px;
+            transition: color 0.3s ease;
+        }
+        .header .categories a:hover {
+            color: #61dafb;
+        }
+        .header .profile {
+            position: relative;
+            display: inline-block;
+        }
+        .header .profile img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .header .profile img:hover {
+            transform: scale(1.1);
+        }
+        .header .profile .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 60px;
+            background-color: #ffffff;
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .header .profile .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        .header .profile .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+        }
+        @media (min-width: 768px) {
+            .header .categories {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                width: auto;
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
+                flex: 1;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .hamburger {
+                display: none;
+            }
+            .header .logo {
+                flex: 0 1 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="hamburger" id="hamburgerButton">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="categories" id="categoriesMenu">
+            <a href="#">Internships</a>
+            <a href="#">About</a>
+        </div>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture" id="profileButton">
+            <div class="dropdown" id="profileDropdown">
+                <a href="#">Profile</a>
+                <a href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('profileButton').addEventListener('click', function() {
+            var dropdown = document.getElementById('profileDropdown');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+        window.onclick = function(event) {
+            if (!event.target.matches('#profileButton')) {
+                var dropdown = document.getElementById('profileDropdown');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+        document.getElementById('hamburgerButton').addEventListener('click', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        });
+        window.addEventListener('resize', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
