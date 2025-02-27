@@ -466,12 +466,17 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    table-layout: fixed;
 }
 
 table th, table td {
     padding: var(--table-padding);
     text-align: left;
     border-bottom: var(--table-border-bottom);
+}
+
+table td{
+    font-size: 20px;
 }
 
 table th {
@@ -481,7 +486,7 @@ table th {
 }
 
 table tr {
-    color: var(--text-color) !important;
+    color: var(--text-color);
     transition: color var(--transition-duration) ease, background-color var(--transition-duration) ease, font-weight var(--transition-duration) ease;
 }
 
@@ -516,7 +521,9 @@ table tr:hover td a {
 }
 
 .action-buttons {
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .action-buttons button {
@@ -657,4 +664,76 @@ table tr:hover td a {
     .header .logo {
         flex: 0 1 auto;
     }
+}
+
+/* User Management specific styles */
+.main-content {
+    padding: 20px;
+}
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 42px 20px 42px;
+}
+
+.add-recruiter-btn {
+    padding: 20px 30px;
+    background-color: #b71c1c;  
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background-color: var(--table-hover-background-color);
+    color: var(--table-hover-color);
+    font-weight: var(--table-hover-font-weight);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-buttons button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grant-admin-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.revoke-admin-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.export-applications-btn {
+    background-color: #2196f3;
+    color: white;
 }

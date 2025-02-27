@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="mainStyles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>User Management</title>
+</head>
+<body>
+    <div class="header">
+        <div class="hamburger" id="hamburgerButton">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="Images/SRIHER_LOGO.png" alt="Logo"></a>
+        </div>
+        <div class="categories" id="categoriesMenu">
+            <a href="#">Internships</a>
+            <a href="#">About</a>
+        </div>
+        <div class="profile">
+            <img src="Images/profile.png" alt="Profile Picture" id="profileButton">
+            <div class="dropdown" id="profileDropdown">
+                <a href="#">Profile</a>
+                <a href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="title-section">
+            <h1 style="font-size: 50px;"><span style="color: #b71c1c;">User</span> Management</h1>
+            <button class="add-recruiter-btn">+ Add New Recruiter</button>
+        </div>
+        <div class="search-add">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th style="text-align: center;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <tr>
+                        <td>user1</td>
+                        <td>user1@example.com</td>
+                        <td>student</td>
+                        <td class="action-buttons">
+                            <button class="grant-admin-btn">Grant Admin</button>
+                            <button class="export-applications-btn">Export Applications</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>user2</td>
+                        <td>user2@example.com</td>
+                        <td>admin</td>
+                        <td class="action-buttons">
+                            <button class="revoke-admin-btn">Revoke Admin</button>
+                            <button class="export-applications-btn">Export Applications</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>user3</td>
+                        <td>user3@example.com</td>
+                        <td>recruiter</td>
+                        <td class="action-buttons">
+                            <button class="grant-admin-btn">Grant Admin</button>
+                            <button class="export-applications-btn">Export Applications</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('profileButton').addEventListener('click', function() {
+            var dropdown = document.getElementById('profileDropdown');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+        window.onclick = function(event) {
+            if (!event.target.matches('#profileButton')) {
+                var dropdown = document.getElementById('profileDropdown');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+        document.getElementById('hamburgerButton').addEventListener('click', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        });
+        window.addEventListener('resize', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#usersTableBody tr');
+            rows.forEach(row => {
+                const username = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+                if (username.includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
