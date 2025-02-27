@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="mainStyles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <div class="hamburger" id="hamburgerButton">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+                <a href="#"><img src="Images/SRIHER_LOGO.png" alt="Logo"></a>
+            </div>
+            <div class="categories" id="categoriesMenu">
+                <a href="#">Internships</a>
+                <a href="#">About</a>
+            </div>
+            <div class="profile">
+                <img src="Images/profile.png" alt="Profile Picture" id="profileButton">
+                <div class="dropdown" id="profileDropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
+        </div>
+
+        <h1><span style="color: #b71c1c; font-weight: bold;">Internship</span> Posts</h1>
+        <div class="search-add">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Posts</th>
+                        <th class="actions-header">Actions <a href="#" class="add-new-btn">&#43; Add New</a></th>
+                    </tr>
+                </thead>
+                <tbody id="postsTableBody">
+                    <tr>
+                        <td><a href="#">Internship 1</a></td>
+                        <td class="action-buttons">
+                            <button class="edit-btn">Edit</button>
+                            <button class="view-btn">View Respondents</button>
+                            <button class="delete-btn">Delete</button>
+                            <button class="close-btn">Close</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Internship 2</a></td>
+                        <td class="action-buttons">
+                            <button class="edit-btn">Edit</button>
+                            <button class="view-btn">View Respondents</button>
+                            <button class="delete-btn">Delete</button>
+                            <button class="close-btn">Close</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Internship 3</a></td>
+                        <td class="action-buttons">
+                            <button class="edit-btn">Edit</button>
+                            <button class="view-btn">View Respondents</button>
+                            <button class="delete-btn">Delete</button>
+                            <button class="close-btn">Close</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Internship 4</a></td>
+                        <td class="action-buttons">
+                            <button class="edit-btn">Edit</button>
+                            <button class="view-btn">View Respondents</button>
+                            <button class="delete-btn">Delete</button>
+                            <button class="close-btn">Close</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Internship 5</a></td>
+                        <td class="action-buttons">
+                            <button class="edit-btn">Edit</button>
+                            <button class="view-btn">View Respondents</button>
+                            <button class="delete-btn">Delete</button>
+                            <button class="close-btn">Close</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="histogram" onclick="window.location.href='#'">
+            <h1 class="view-analytics">View Analytics</h1>
+            <div style="height: 50%;" class="bar"></div>
+            <div style="height: 70%;" class="bar"></div>
+            <div style="height: 30%;" class="bar"></div>
+            <div style="height: 90%;" class="bar"></div>
+            <div style="height: 60%;" class="bar"></div>
+            <div style="height: 50%;" class="bar"></div>
+            <div style="height: 20%;" class="bar"></div>
+            <div style="height: 90%;" class="bar"></div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.bar').forEach(bar => {
+            let OriginalHeight = bar.style.height;
+            bar.addEventListener('mouseover', () => {
+                bar.style.height = '100%';
+            });
+            bar.addEventListener('mouseout', () => {
+                bar.style.height =OriginalHeight;
+            });
+        });
+        document.getElementById('profileButton').addEventListener('click', function() {
+            var dropdown = document.getElementById('profileDropdown');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+        window.onclick = function(event) {
+            if (!event.target.matches('#profileButton')) {
+                var dropdown = document.getElementById('profileDropdown');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+        document.getElementById('hamburgerButton').addEventListener('click', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        });
+        window.addEventListener('resize', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#postsTableBody tr');
+            rows.forEach(row => {
+                const title = row.querySelector('td a').textContent.toLowerCase();
+                if (title.includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

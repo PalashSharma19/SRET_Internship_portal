@@ -9,21 +9,39 @@
 </head>
 <body>
 
-    <header style="height: 74px; width: auto; background-color: #0d1b2a; position: sticky;">
-        
-    </header>
+    <div class="header">
+        <div class="hamburger" id="hamburgerButton">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="Images/SRIHER_LOGO.png" alt="Logo"></a>
+        </div>
+        <div class="categories" id="categoriesMenu">
+            <a href="#">Internships</a>
+            <a href="#">About</a>
+        </div>
+        <div class="profile">
+            <img src="Images/profile.png" alt="Profile Picture" id="profileButton">
+            <div class="dropdown" id="profileDropdown">
+                <a href="#">Profile</a>
+                <a href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
 
     <div class="main ">
         <div class="filter-toggle" id="filterToggle">
-            <img src="Images/filter-icon.png" alt="Filter Icon">
+            <img src="Images/filters.png" alt="Filter Icon">
         </div>
         <div class="internships" id="internshipsSection">
             <h1><span style="color: #b71c1c; font-weight: bold;">SRET</span> Internship Program</h1>
             <p>internship paragraph</p>
-            <div class="search"><input type="text" placeholder="Search for internships..."></div>
+            <div class="search"><input type="text" id="searchInput" placeholder="Search for internships..."></div>
             <div class="container" id="internshipContainer">
                 <div class="card">
-                    <h1>Internship 1</h1>
+                    <h1>Web Development Internship</h1>
                     <p>Date posted: 01/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
@@ -35,8 +53,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Data Science Internship</h1>
+                    <p>Date posted: 02/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -47,8 +65,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Machine Learning Internship</h1>
+                    <p>Date posted: 03/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -59,8 +77,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Graphic Design Internship</h1>
+                    <p>Date posted: 04/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -71,8 +89,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Marketing Internship</h1>
+                    <p>Date posted: 05/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -83,8 +101,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Content Writing Internship</h1>
+                    <p>Date posted: 06/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -95,8 +113,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Finance Internship</h1>
+                    <p>Date posted: 07/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -107,8 +125,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Human Resources Internship</h1>
+                    <p>Date posted: 08/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -119,8 +137,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Sales Internship</h1>
+                    <p>Date posted: 09/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -131,8 +149,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Software Engineering Internship</h1>
+                    <p>Date posted: 10/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -143,8 +161,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Cybersecurity Internship</h1>
+                    <p>Date posted: 11/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -155,8 +173,8 @@
                     </button>
                 </div>
                 <div class="card">
-                    <h1>Internship 1</h1>
-                    <p>Date posted: 01/01/2023</p>
+                    <h1>Product Management Internship</h1>
+                    <p>Date posted: 12/01/2023</p>
                     <p>Posted by: SRET</p>
                     <button class="btn-class-name">
                         <span>Apply Now</span>
@@ -169,36 +187,53 @@
             </div>
         </div>
         <div class="filters" id="filtersSection">
-            <div class="filter">
-                <input type="checkbox" id="filter1">
-                <label for="filter1">Filter 1</label>
-            </div>
-            <div class="filter">
-                <input type="checkbox" id="filter2">
-                <label for="filter2">Filter 2</label>
-            </div>
-            <div class="filter">
-                <input type="checkbox" id="filter3">
-                <label for="filter3">Filter 3</label>
-            </div>
-            <div class="filter">
-                <input type="checkbox" id="filter4">
-                <label for="filter4">Filter 4</label>
-            </div>
-            <div class="filter">
-                <input type="checkbox" id="filter5">
-                <label for="filter5">Filter 5</label>
-            </div>
             <div class="close-toggle" id="closeToggle">
-                <img src="Images/close-icon.png" alt="Close Icon">
+                <img src="Images/close.png" alt="Close Icon">
+            </div>
+            <div class="main-filters">
+                <h1>Filters</h1>
+                <div class="filter">
+                    <div class="filter-title" onclick="toggleDropdown('skillsDropdown')">
+                        Skills <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="filter-content" id="skillsDropdown">
+                        <label><input type="checkbox"> JavaScript</label>
+                        <label><input type="checkbox"> Python</label>
+                        <label><input type="checkbox"> HTML/CSS</label>
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="filter-title" onclick="toggleDropdown('durationDropdown')">
+                        Duration <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="filter-content" id="durationDropdown">
+                        <label><input type="checkbox"> 1 Month</label>
+                        <label><input type="checkbox"> 3 Months</label>
+                        <label><input type="checkbox"> 6 Months</label>
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="filter-title" onclick="toggleDropdown('stipendDropdown')">
+                        Stipend <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="filter-content" id="stipendDropdown">
+                        <label><input type="checkbox"> Unpaid</label>
+                        <label><input type="checkbox"> Paid</label>
+                    </div>
+                </div>
             </div>
             <div class="back-toggle" id="backToggle">
-                <img src="Images/back-icon.png" alt="Back Icon">
+                <img src="Images/close.png" alt="Back Icon">
             </div>
         </div>
     </div>
     
     <script>
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
         document.getElementById('filterToggle').addEventListener('click', function() {
             var filtersSection = document.getElementById('filtersSection');
             var internshipContainer = document.getElementById('internshipContainer');
@@ -207,7 +242,7 @@
                 internshipContainer.style.animation = 'gridExpand 0.5s forwards';
                 setTimeout(function() {
                     filtersSection.style.display = 'none';
-                    internshipContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
+                    internshipContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
                 }, 500);
             } else {
                 filtersSection.style.display = 'block';
@@ -223,7 +258,7 @@
             internshipContainer.style.animation = 'gridExpand 0.5s forwards';
             setTimeout(function() {
                 filtersSection.style.display = 'none';
-                internshipContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
+                internshipContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
             }, 500);
         });
         document.getElementById('backToggle').addEventListener('click', function() {
@@ -233,7 +268,7 @@
             internshipContainer.style.animation = 'gridExpand 0.5s forwards';
             setTimeout(function() {
                 filtersSection.style.display = 'none';
-                internshipContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
+                internshipContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
             }, 500);
         });
         window.addEventListener('resize', function() {
@@ -244,7 +279,7 @@
                 internshipContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
             } else {
                 filtersSection.style.display = 'none';
-                internshipContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                internshipContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
             }
         });
 
@@ -261,6 +296,53 @@
 
         cards.forEach(card => {
             observer.observe(card);
+        });
+
+        document.getElementById('profileButton').addEventListener('click', function() {
+            var dropdown = document.getElementById('profileDropdown');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+        window.onclick = function(event) {
+            if (!event.target.matches('#profileButton')) {
+                var dropdown = document.getElementById('profileDropdown');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+        document.getElementById('hamburgerButton').addEventListener('click', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        });
+        window.addEventListener('resize', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const title = card.querySelector('h1').textContent.toLowerCase();
+                if (title.includes(searchValue)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
