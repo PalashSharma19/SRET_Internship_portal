@@ -119,6 +119,76 @@ body {
     margin-top: 20px;
 }
 
+.form-container {
+    width: 90%;
+    margin: 20px auto;
+    background-color: var(--primary-color);
+    padding: var(--padding);
+}
+
+.form-container h1 {
+    text-align: start;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.form-container h1 span {
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom:40px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: border-color var(--transition-duration) ease-in-out;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--highlight-color);
+    outline: none;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group button {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    border: none;
+    padding: 16px 28px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-size: 20px;
+    transition: background-color var(--transition-duration) ease-in-out;
+}
+
+.form-group button:hover {
+    background-color: #ff0000;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

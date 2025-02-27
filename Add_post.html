@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="mainStyles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Add Internship Post</title>
+</head>
+<body>
+    <div class="header">
+        <div class="hamburger" id="hamburgerButton">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="Images/SRIHER_LOGO.png" alt="Logo"></a>
+        </div>
+        <div class="categories" id="categoriesMenu">
+            <a href="#">Internships</a>
+            <a href="#">About</a>
+        </div>
+        <div class="profile">
+            <img src="Images/profile.png" alt="Profile Picture" id="profileButton">
+            <div class="dropdown" id="profileDropdown">
+                <a href="#">Profile</a>
+                <a href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h1 style="font-size: 70px; margin-bottom: 60px;"><span style="color: red;">Add</span> Posts</h1>
+        <form>
+            <div class="form-group">
+                <label for="title">Internship Title</label>
+                <input type="text" id="title" name="title" class="enhanced-input" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration (End date)</label>
+                <input type="date" id="duration" name="duration" class="enhanced-input" required onclick="this.showPicker()">
+            </div>
+            <div class="form-group">
+                <label for="stipend">Stipend</label>
+                <div class="radio-group">
+                    <label style="display: inline;"><input type="radio" id="stipend_yes" name="stipend" value="yes" class="enhanced-input" style="width: auto;"> Yes</label>
+                    <label style="display: inline;"><input type="radio" id="stipend_no" name="stipend" value="no" class="enhanced-input" style="width: auto;"> No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <label><input type="checkbox" name="skills" value="python" class="enhanced-input"> Python</label>
+                <label><input type="checkbox" name="skills" value="java" class="enhanced-input"> Java</label>
+                <label><input type="checkbox" name="skills" value="javascript" class="enhanced-input"> JavaScript</label>
+                <label><input type="checkbox" name="skills" value="html_css" class="enhanced-input"> HTML/CSS</label>
+                <label><input type="checkbox" name="skills" value="react" class="enhanced-input"> React</label>
+            </div>
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" name="course" class="enhanced-input" required>
+                    <option value="machine_learning">Machine Learning</option>
+                    <option value="data_analytics">Data Analytics</option>
+                    <option value="cyber_security">CyberSecurity</option>
+                    <option value="ece">ECE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Internship Description</label>
+                <textarea id="description" name="description" class="enhanced-input" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('profileButton').addEventListener('click', function() {
+            var dropdown = document.getElementById('profileDropdown');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+        window.onclick = function(event) {
+            if (!event.target.matches('#profileButton')) {
+                var dropdown = document.getElementById('profileDropdown');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+        document.getElementById('hamburgerButton').addEventListener('click', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        });
+        window.addEventListener('resize', function() {
+            var menu = document.getElementById('categoriesMenu');
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
